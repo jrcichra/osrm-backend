@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: osrm-backend-rpi build
 
 on: [push]
 
