@@ -18,5 +18,5 @@ docker buildx inspect --bootstrap
 # Phase 2 - sign in
 echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin 
 # Phase 3 - build a container
-docker buildx build --platform linux/arm/v7 -t jrcichra/osrm-backend-rpi --push .
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/osrm-backend-rpi --push .
 docker buildx imagetools inspect jrcichra/osrm-backend-rpi
