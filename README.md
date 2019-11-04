@@ -1,4 +1,8 @@
-## Open Source Routing Machine (arm docker version)
+## Open Source Routing Machine (arm docker version) ![Actions Status](https://github.com/jrcichra/osrm-backend/workflows/osrm-backend-rpi%20build/badge.svg)
+
+Docker hub: https://cloud.docker.com/u/jrcichra/repository/docker/jrcichra/osrm-backend-rpi
+
+# Original:
 
 | Linux / macOS | Windows | Code Coverage |
 | ------------- | ------- | ------------- |
