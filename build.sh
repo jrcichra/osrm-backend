@@ -19,9 +19,9 @@ docker buildx inspect --bootstrap
 echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin 
 # Phase 3 - build a container
 if [ "$1" == "DEBUG" ];then
-    docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/osrm-backend-rpi-debug --push .
+    docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 --build-arg DOCKER_TAG=jrcichra/osrm-backend-rpi-debug -t jrcichra/osrm-backend-rpi-debug --push .
     docker buildx imagetools inspect jrcichra/osrm-backend-rpi
 else
-    docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/osrm-backend-rpi --push .
+    docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 --build-arg DOCKER_TAG=jrcichra/osrm-backend-rpi -t jrcichra/osrm-backend-rpi --push .
     docker buildx imagetools inspect jrcichra/osrm-backend-rpi
 fi
