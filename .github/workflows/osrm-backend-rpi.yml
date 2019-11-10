@@ -9,7 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: build & push
-        run: bash -x build.sh
+        run: |
+          cp build.sh /tmp/build.sh
+          git checkout 7cfbff74823547ae9a823e63c014e1a2bb704c3b
+          bash -x /tmp/build.sh
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
