@@ -10,8 +10,6 @@ jobs:
       - uses: actions/checkout@v1
       - name: build & push
         run: |
-          cp build.sh /tmp/build.sh
-          git checkout tags/v5.22.0
           bash -x /tmp/build.sh
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
