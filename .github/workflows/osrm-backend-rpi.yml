@@ -11,7 +11,7 @@ jobs:
       - name: build & push
         run: |
           cp build.sh /tmp/build.sh
-          git checkout 7cfbff74823547ae9a823e63c014e1a2bb704c3b
+          git checkout tags/v5.22.0
           bash -x /tmp/build.sh
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
